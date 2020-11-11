@@ -1,5 +1,8 @@
 package com.example.spring_security.controllers;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -9,7 +12,10 @@ public class HelloControllers {
 
     @GetMapping("/helloo")
     public ResponseEntity<?> helloo() {
-        return ResponseEntity.ok("Helloo");
+        List<String> names = new ArrayList<>();
+        names.add("Hey");
+        names.add("Great");
+        return ResponseEntity.ok().body(names);
     }
 
     @GetMapping("/helloo/admin")
